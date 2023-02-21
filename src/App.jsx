@@ -1,16 +1,23 @@
-import "./App.css";
 import EducationalExperience from "./components/EducationalExperience";
+import Footer from "./components/Footer";
 import GeneralInformation from "./components/GeneralInformation";
+import Header from "./components/Header";
 import PracticalExperience from "./components/PracticalExperience";
+
+import { GlobalStyled, Container } from "./components/GlobalStyled";
 
 const App = () => {
   return (
-    <div className="App">
-      <h1>Teste aqui</h1>
-      <GeneralInformation />
-      <EducationalExperience />
-      <PracticalExperience />
-    </div>
+    <>
+      <GlobalStyled />
+      <Header />
+      <Container>
+        <GeneralInformation />
+        <EducationalExperience />
+        <PracticalExperience />
+      </Container>
+      <Footer />
+    </>
   );
 };
 
