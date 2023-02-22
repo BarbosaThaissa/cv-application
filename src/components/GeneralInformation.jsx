@@ -1,65 +1,35 @@
-import React, { useState } from "react";
-import { Form } from "./GlobalStyled";
+import React from "react";
+import { Form, BtnAdd, H2Form, Input } from "./GlobalStyled";
 
-const GeneralInformation = () => {
-  const [inputName, setInputName] = useState("");
-  const [inputEmail, setInputEmail] = useState("");
-  const [inputPhone, setInputPhone] = useState("");
-  const [inputButton, setInputButton] = useState({});
-
-  const changeFullName = (e) => {
-    setInputName(e.target.value);
-  };
-
-  const changeEmail = (e) => {
-    setInputEmail(e.target.value);
-  };
-
-  const changePhone = (e) => {
-    setInputPhone(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setInputButton({
-      name: inputName,
-      email: inputEmail,
-      phone: inputPhone,
-    });
-    
-  };
-
+const GeneralInformation = (props) => {
   return (
     <div>
-      {/* full name, email, phone */}
-      <h1>Personal Information</h1>
-      <Form onSubmit={(e) => handleSubmit(e)}>
-        <input
+      <H2Form>Personal Information</H2Form>
+      <Form onSubmit={props.handleSubmitGeral}>
+        <Input
           type="text"
           required
           placeholder="Full Name"
-          onChange={(e) => changeFullName(e)}
+          value={props.inputName}
+          onChange={props.onChangeFullName}
         />
-        <input
+        <Input
           type="email"
           required
           placeholder="Email"
-          onChange={(e) => changeEmail(e)}
+          value={props.inputEmail}
+          onChange={props.onChangeEmail}
         />
-        <input
+        <Input
           type="tel"
           required
           placeholder="Phone"
-          onChange={(e) => changePhone(e)}
+          value={props.inputPhone}
+          onChange={props.onChangePhone}
         />
-        <button type="submit">Add</button>
+        <BtnAdd type="submit">Add</BtnAdd>
       </Form>
-      <div>
-        <p>{inputButton.name}</p>
-        <p>{inputButton.email}</p>
-        <p>{inputButton.phone}</p>
-        <button>Delete</button>
-      </div>
+      <br />
     </div>
   );
 };

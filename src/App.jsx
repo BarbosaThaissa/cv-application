@@ -1,8 +1,7 @@
-import EducationalExperience from "./components/EducationalExperience";
-import Footer from "./components/Footer";
-import GeneralInformation from "./components/GeneralInformation";
+import React from "react";
 import Header from "./components/Header";
-import PracticalExperience from "./components/PracticalExperience";
+import Footer from "./components/Footer";
+import FormsCV from "./components/FormsCV";
 
 import { GlobalStyled, Container } from "./components/GlobalStyled";
 
@@ -12,9 +11,7 @@ const App = () => {
       <GlobalStyled />
       <Header />
       <Container>
-        <GeneralInformation />
-        <EducationalExperience />
-        <PracticalExperience />
+        <FormsCV />
       </Container>
       <Footer />
     </>

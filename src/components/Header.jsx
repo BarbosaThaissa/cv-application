@@ -15,7 +15,7 @@ const Header = () => {
   return (
     <HeaderStyled>
       <h1>CV Application</h1>
-      <span>light and dark mode</span>
+      <button>light and dark</button>
     </HeaderStyled>
   );
 };

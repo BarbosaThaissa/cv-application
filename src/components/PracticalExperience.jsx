@@ -1,86 +1,57 @@
-import React, {useState} from "react";
-import { Form } from "./GlobalStyled";
+import React, { useState } from "react";
+import {
+  Form,
+  BtnAdd,
+  BtnDelete,
+  H2Form,
+  Input,
+  ResultStyld,
+  Span,
+} from "./GlobalStyled";
 
-
-const PracticalExperience = () => {
-const [companyName, setCompanyName] = useState('')
-const [inputPosition, setInputPosition] = useState('')
-const [mainTasks, setMainTasks] = useState('')
-const [inputFrom, setInputFrom] = useState('')
-const [inputUntil, setInputUntil] = useState('')
-const [inputButton, setInputButton] = useState({});
-
-
-const handleCompany = (e) => {
-  setCompanyName(e.target.value)
-}
-const handlePosition = (e) => {
-  setInputPosition(e.target.value)
-}
-const handleMainTasks = (e) => {
-  setMainTasks(e.target.value)
-}
-const handleFrom = (e) => {
-  setInputFrom(e.target.value)
-}
-const handleUntil = (e) => {
-  setInputUntil(e.target.value)
-}
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setInputButton({
-      company: companyName,
-      position: inputPosition,
-      mainTask: mainTasks,
-      dateOfJob: `${inputFrom} - ${inputUntil}`
-    });
-  };
-
-
+const PracticalExperience = (props) => {
   return (
     <div>
-      {/*nome da empresa, cargo, principais tarefas de seus trabalhos, data de e até quando você trabalhou para essa empresa/ company name, position title, main tasks of your jobs, date from and until when you worked for that company) */}
-      <h1>PracticalExperience</h1>
-      <Form onSubmit={(e) => handleSubmit(e)}>
-      <input
+      <H2Form>Experience</H2Form>
+      <Form onSubmit={props.handleSubmitJob}>
+        <Input
           type="text"
           placeholder="Company"
           required
-          onChange={(e) => handleCompany(e)}
+          value={props.companyName}
+          onChange={props.onChangeCompany}
         />
-      <input
+        <Input
           type="text"
           placeholder="Position"
           required
-          onChange={(e) => handlePosition(e)}
+          value={props.inputPosition}
+          onChange={props.onChangePosition}
         />
-      <input
+        <Input
           type="text"
           placeholder="Your main tasks"
           required
-          onChange={(e) => handleMainTasks(e)}
+          value={props.mainTasks}
+          onChange={props.onChangeMainTasks}
         />
-      <input
+        <Input
           type="number"
           placeholder="From ex: 2021"
           required
-          onChange={(e) => handleFrom(e)}
+          value={props.inputFromJob}
+          onChange={props.onChangeFrom}
         />
-      <input
+        <Input
           type="number"
           placeholder="To ex: 2022"
           required
-          onChange={(e) => handleUntil(e)}
+          value={props.inputUntil}
+          onChange={props.onChangeUntil}
         />
 
-        <button type="submit">Add</button>
+        <BtnAdd type="submit">Add</BtnAdd>
       </Form>
-      <p>{inputButton.company}</p>
-      <p>{inputButton.position}</p>
-      <p>{inputButton.mainTask}</p>
-      <p>{inputButton.dateOfJob}</p>
-      <button>Delete</button>
     </div>
   );
 };
