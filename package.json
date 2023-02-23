@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://BarbosaThaissa.github.io/cv-application",
+  "homepage": "https://barbosathaissa.github.io/cv-application",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
