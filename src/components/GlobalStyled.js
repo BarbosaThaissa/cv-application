@@ -1,10 +1,11 @@
 import styled, { createGlobalStyle } from "styled-components";
+import { lightTheme, darkTheme } from "../theme";
 
 export const GlobalStyled = createGlobalStyle`
   * {
     margin: 0;
     padding: 0;
-    font-family: "Verdana";
+    font-family: "Montserrat", "Verdana";
   }
 
 `;
@@ -15,7 +16,8 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #e9e3e6;
+  background-color: ${({ theme }) => theme.body};
+  color: ${({ theme }) => theme.text};
 `;
 export const Form = styled.form`
   display: flex;
@@ -31,7 +33,7 @@ export const Center = styled.div`
   min-height: 60vh;
   padding: 1rem;
   margin: 2rem 0;
-  background-color: rgb(238, 238, 238);
+  background-color: ${({ theme }) => theme.form};
 `;
 
 
@@ -81,4 +83,23 @@ export const ResultStyld = styled.div`
 
 export const Span = styled.span`
   font-weight: 600;
+`
+
+export const DivIcons = styled.div`
+   width: 15%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: 3px;
+
+   & > a {
+    color: #2196f3;
+    font-size: 2rem;
+  }
+
+  & > a:hover {
+    cursor: pointer;
+    color: #bde0fe;
+  }
 `

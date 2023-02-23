@@ -1,5 +1,4 @@
 import React from "react";
-import { FaGithub } from "react-icons/fa";
 import styled from "styled-components";
 
 const FooterStyles = styled.footer`
@@ -27,11 +26,10 @@ const Footer = () => {
   return (
     <FooterStyles>
       <p>
-        Copyright &copy; 2023
+        Copyright &copy; 2023 &nbsp;
         <A href="https://github.com/BarbosaThaissa" target="_blank">
-          Thaissa Barbosa <FaGithub />
+          Thaissa Barbosa
         </A>
-        All Rights Reserved
       </p>
     </FooterStyles>
   );

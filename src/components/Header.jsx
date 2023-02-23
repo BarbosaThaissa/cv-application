@@ -1,5 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import Toggle from "./Toggle";
+import { FaInstagramSquare, FaLinkedin, FaGithub } from "react-icons/fa";
+import {DivIcons}  from './GlobalStyled'; 
 
 const HeaderStyled = styled.header`
   color: white;
@@ -7,15 +10,26 @@ const HeaderStyled = styled.header`
   align-items: center;
   justify-content: center;
   background-color: black;
-  gap: 5px;
   height: 10vh;
+  padding-right: 8rem;
 `;
 
-const Header = () => {
+const Header = (props) => {
   return (
     <HeaderStyled>
+      <DivIcons>
+        <a href="https://www.linkedin.com/in/barbosathaissa/">
+          <FaLinkedin />
+        </a>
+        <a href="https://www.instagram.com/thaissabarbosaa/">
+          <FaInstagramSquare />
+        </a>
+        <a href="https://github.com/BarbosaThaissa">
+          <FaGithub />
+        </a>
+      </DivIcons>
       <h1>CV Application</h1>
-      <button>light and dark</button>
+      <Toggle theme={props.theme} toggleTheme={props.toggleTheme} />
     </HeaderStyled>
   );
 };
