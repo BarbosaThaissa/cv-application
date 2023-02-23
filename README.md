@@ -41,7 +41,7 @@ This application has:
 - A section to add your educational experience (school name, title of study, date of study).
 - A section to add practical experience (company name, position title, main tasks of your jobs, date from and until when you worked for that company).
 
-Live preview: https://barbosathaissa.github.io/cv-application
+Live preview: https://mycvcreator.netlify.app/
 
 <p><img src="./src/assets/rainbow-readme.png" alt="-----------------------------------------------------" /></p>
 
